@@ -1,0 +1,8 @@
+---
+- hosts: client
+  tasks:
+  - name: memory details
+    shell: whoami
+    register: a
+  - name: create a folder with different usename using whoami and register module
+    shell: mkdir /home/"{{a.stdout}}"/testdemo

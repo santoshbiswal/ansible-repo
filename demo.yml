@@ -1,0 +1,8 @@
+---
+- hosts: client
+  tasks:
+  - name: excute command
+    shell: mkdir /home/partha/test1
+  - name: create a file
+    shell: touch /home/partha/test1/test1.txt
+

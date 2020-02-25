@@ -1,0 +1,9 @@
+---
+- hosts: client
+  vars:
+   x: /home/raja/install.yml  
+   y: /home/partha/test1/
+  tasks: 
+  - name: copy file
+    copy: src={{x}} dest={{y}}
+  

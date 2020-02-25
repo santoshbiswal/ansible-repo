@@ -1,0 +1,8 @@
+---
+- hosts: client
+  tasks:
+  - name: include file
+    include_vars: temp.yml 
+  - name: copy file
+    copy: src={{x}} dest={{y}}
+  

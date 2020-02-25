@@ -1,0 +1,9 @@
+---
+- hosts: client
+  vars: 
+      a: "{{x}}"
+      b: "{{y}}"
+  tasks: 
+  - name: copy file
+    copy: src={{a}} dest={{b}}
+  

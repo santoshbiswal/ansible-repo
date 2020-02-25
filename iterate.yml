@@ -1,0 +1,12 @@
+---
+- hosts: client
+  tasks:
+  - name: get user name
+    shell: whoami
+    register: r
+  - name: print 3 times with sleeping 15 sec
+    debug:
+        msg: "{{r.stdout}}"
+    with_sequence: count=3
+    delay: 1050
+

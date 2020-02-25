@@ -1,0 +1,5 @@
+---
+- hosts: client
+  tasks:
+  - name: excute a copy command
+    copy: src=/home/raja/demo.yml dest=/home/partha/test1/

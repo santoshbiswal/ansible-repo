@@ -1,0 +1,7 @@
+---
+- hosts: client
+  tasks:
+  - name: create file and from array
+    shell: touch file{{item}}.txt
+    with_items: {"aa","sbb","gopal","hari"} 
+    when: item == 'gopal'

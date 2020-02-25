@@ -1,0 +1,18 @@
+---
+- hosts: client
+  tasks:
+  - name: get user home 
+    shell: whoami
+    register: a
+  - name: copy file
+    copy: src=/home/raja/myfile2 dest=/home/{{a.stdout}}/testdemo
+    become: yes
+  - name: read  file content
+    shell: cat /home/{{a.stdout}}/testdemo/myfile2
+    register: o
+  - name: mcreate file based on content condition
+    when: o.stdout.contains'santosh'
+    shell: touch /home/"{{a.stdout}}"/"{{o.stdout}}".txt 
+
+
+
